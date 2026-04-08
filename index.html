@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Daav — Improving lives through infection care in Dar es Salaam, Tanzania. Fighting malaria, HIV/AIDS, and tuberculosis through community-centered health programs." />
+  <meta name="keywords" content="NGO Tanzania, malaria, HIV/AIDS, tuberculosis, Dar es Salaam, health care, community health" />
+  <meta property="og:title" content="Daav — Infection Care in Tanzania" />
+  <meta property="og:description" content="Helping people living with infections in Dar es Salaam through treatment, awareness, and community outreach." />
+  <meta property="og:type" content="website" />
+  <title>Daav NGO | Improving Lives Through Infection Care</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/Daav_logo.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/Daav_logo.webp">
+  <link rel="shortcut icon" href="assets/Daav_logo.webp">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="logo-container" aria-label="Daav home">
+    <img src="assets/Daav_logo.webp" alt="Daav NGO Logo" class="logo-img" loading="eager">
+  </a>
+
+  <ul class="nav-links" role="list">
+    <li><a href="#about" data-i18n="nav-about">About</a></li>
+    <li><a href="#solution" data-i18n="nav-programs">Programs</a></li>
+    <li><a href="#impact" data-i18n="nav-impact">Impact</a></li>
+    <li><a href="#involved" data-i18n="nav-contact">Get Involved</a></li>
+    <li><a href="#trust">Partners</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <button class="btn-lang" id="langToggle" aria-label="Toggle language">SW</button>
+    <button class="btn-icon" id="darkToggle" aria-label="Toggle dark mode">🌙</button>
+    <a href="#" class="btn-donate-nav" data-modal="donate" data-i18n="cta-donate">Donate Now</a>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" role="dialog" aria-label="Mobile navigation">
+  <button class="mobile-nav-close" aria-label="Close menu">✕</button>
+  <a href="#about">About</a>
+  <a href="#solution">Programs</a>
+  <a href="#impact">Impact</a>
+  <a href="#involved">Get Involved</a>
+  <a href="#trust">Partners</a>
+  <a href="#" data-modal="donate" style="color: var(--amber);">Donate Now →</a>
+</div>
+
+<!-- ============================================================
+     SECTION 1 — HERO
+     ============================================================ -->
+<header id="home" class="hero" role="banner">
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-dot" aria-hidden="true"></div>
+      <span data-i18n="hero-eyebrow">Dar es Salaam · Est. 2026</span>
+    </div>
+
+    <h1 class="hero-heading">
+      <span id="typewriter-text"></span><span id="typewriter-cursor" aria-hidden="true"></span>
+    </h1>
+
+    <p class="hero-sub">
+      We provide direct infection treatment, community health education, and
+      evidence-based outreach to those most affected by malaria, HIV/AIDS,
+      and tuberculosis in Dar es Salaam.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#" class="btn btn-primary" data-modal="donate">
+        <span>❤</span> <span data-i18n="cta-donate">Donate Now</span>
+      </a>
+      <a href="#involved" class="btn btn-outline">
+        <span data-i18n="cta-involved">Get Involved</span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="hero-stat-bar" role="list">
+      <div class="hero-stat" role="listitem">
+        <span class="hero-stat-number">10<span>,</span>400<span style="color:var(--amber)">+</span></span>
+        <span class="hero-stat-label" data-i18n="stat-lives">Lives Impacted</span>
+      </div>
+      <div class="hero-stat" role="listitem">
+        <span class="hero-stat-number">$<span style="color:var(--amber)">4.20</span></span>
+        <span class="hero-stat-label" data-i18n="stat-cost">Avg. Cost / Intervention</span>
+      </div>
+      <div class="hero-stat" role="listitem">
+        <span class="hero-stat-number">87<span style="color:var(--amber)">%</span></span>
+        <span class="hero-stat-label" data-i18n="stat-recovery">Recovery Rate</span>
+      </div>
+      <div class="hero-stat" role="listitem">
+        <span class="hero-stat-number">24<span style="color:var(--amber)">+</span></span>
+        <span class="hero-stat-label">Partner Organizations</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</header>
+
+<!-- ============================================================
+     SECTION 2 — THE PROBLEM
+     ============================================================ -->
+<section id="about" class="problem-section section-pad" aria-labelledby="problem-heading">
+  <div class="container">
+    <div class="problem-layout">
+
+      <div class="problem-visual reveal">
+        <div class="problem-image-frame">
+          <img
+            src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80"
+            alt="Community health worker speaking with a patient in Dar es Salaam"
+            loading="lazy"
+          />
+        </div>
+        <div class="problem-badge">
+          <span class="problem-badge-number">#3</span>
+          <span class="problem-badge-text">Highest TB burden city in Sub-Saharan Africa</span>
+        </div>
+      </div>
+
+      <div class="problem-content">
+        <div class="section-header reveal">
+          <span class="label">The Challenge</span>
+          <h2 id="problem-heading">The Infection Crisis in Dar es Salaam</h2>
+          <p>
+            Tanzania faces a triple burden of infectious disease — malaria, HIV/AIDS,
+            and tuberculosis — disproportionately affecting its urban poor. In
+            Dar es Salaam, inadequate sanitation, overcrowding, and limited
+            healthcare access create compounding risks.
+          </p>
+        </div>
+
+        <div class="data-blocks">
+          <div class="data-block reveal reveal-delay-1">
+            <div class="data-block-icon" aria-hidden="true">🦟</div>
+            <h4>Malaria</h4>
+            <p>Over 180,000 malaria cases reported annually in the city. Children under 5 are most vulnerable, accounting for 40% of fatalities.</p>
+          </div>
+          <div class="data-block reveal reveal-delay-2">
+            <div class="data-block-icon" aria-hidden="true">🎗</div>
+            <h4>HIV/AIDS</h4>
+            <p>Tanzania has 1.7M people living with HIV. Urban prevalence in Dar es Salaam sits at 8.2%, well above the national average of 4.7%.</p>
+          </div>
+          <div class="data-block reveal reveal-delay-3">
+            <div class="data-block-icon" aria-hidden="true">🫁</div>
+            <h4>Tuberculosis</h4>
+            <p>TB kills more people in Tanzania than any other infectious disease. Multidrug-resistant TB is increasing at an alarming 6% annually.</p>
+          </div>
+          <div class="data-block reveal reveal-delay-4">
+            <div class="data-block-icon" aria-hidden="true">🏥</div>
+            <h4>Healthcare Access</h4>
+            <p>Only 38% of residents in informal settlements have access to a public health facility within 5km, limiting early diagnosis and treatment.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3 — OUR SOLUTION
+     ============================================================ -->
+<section id="solution" class="solution-section section-pad" aria-labelledby="solution-heading">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="label" style="color:var(--teal-300)">Our Approach</span>
+      <h2 id="solution-heading" style="color:var(--white)">Three Pillars of Impact</h2>
+      <p>
+        We combine direct clinical care with community empowerment and rigorous
+        data collection — because good intentions aren't enough; what matters is evidence.
+      </p>
+    </div>
+
+    <div class="solution-cards">
+
+      <article class="solution-card reveal reveal-delay-1">
+        <div class="solution-card-icon" aria-hidden="true">💊</div>
+        <h3>Direct Treatment</h3>
+        <p>
+          We operate four community health posts across the Temeke, Ilala, Kinondoni,
+          and Ubungo districts, providing free diagnosis, medication, and follow-up care
+          for malaria, HIV/AIDS, and tuberculosis patients.
+        </p>
+        <div class="solution-card-tags">
+          <span class="tag">Free Medication</span>
+          <span class="tag">4 Health Posts</span>
+          <span class="tag">Follow-up Care</span>
+        </div>
+      </article>
+
+      <article class="solution-card reveal reveal-delay-2">
+        <div class="solution-card-icon" aria-hidden="true">📢</div>
+        <h3>Community Awareness</h3>
+        <p>
+          Prevention starts with knowledge. Our network of 80 community health
+          educators runs weekly workshops on disease prevention, hygiene, nutrition,
+          and early symptom recognition in Swahili and local dialects.
+        </p>
+        <div class="solution-card-tags">
+          <span class="tag">80 Educators</span>
+          <span class="tag">Weekly Workshops</span>
+          <span class="tag">Swahili Media</span>
+        </div>
+      </article>
+
+      <article class="solution-card reveal reveal-delay-3">
+        <div class="solution-card-icon" aria-hidden="true">🤝</div>
+        <h3>Outreach & Referral</h3>
+        <p>
+          Proactive mobile clinics reach remote and underserved communities monthly.
+          Our patient navigators help individuals access government health services,
+          reducing dropout from treatment by 62% in our coverage areas.
+        </p>
+        <div class="solution-card-tags">
+          <span class="tag">Mobile Clinics</span>
+          <span class="tag">Patient Navigators</span>
+          <span class="tag">Govt. Referral</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4 — IMPACT METRICS (EA-Style)
+     ============================================================ -->
+<section id="impact" class="impact-section section-pad" aria-labelledby="impact-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Measured Impact</span>
+      <h2 id="impact-heading">Our Numbers Are Our Accountability</h2>
+      <p>
+        We track every intervention because transparency isn't optional — it's how
+        we earn your trust and continually improve the efficiency of your donation.
+      </p>
+    </div>
+
+    <div class="impact-grid">
+
+      <div class="metric-card reveal reveal-delay-1">
+        <div class="metric-card-icon" aria-hidden="true">👥</div>
+        <span class="metric-number">
+          <span class="counter" data-target="10427" data-duration="2500"></span><span class="metric-suffix">+</span>
+        </span>
+        <span class="metric-label">Patients Treated</span>
+        <p class="metric-sub">Since 2019 across all programs</p>
+      </div>
+
+      <div class="metric-card reveal reveal-delay-2">
+        <div class="metric-card-icon" aria-hidden="true">💰</div>
+        <span class="metric-number">
+          $<span class="counter" data-target="4.2" data-duration="1800"></span>
+        </span>
+        <span class="metric-label">Cost Per Intervention</span>
+        <p class="metric-sub">Avg. across malaria, HIV & TB</p>
+      </div>
+
+      <div class="metric-card reveal reveal-delay-3">
+        <div class="metric-card-icon" aria-hidden="true">📈</div>
+        <span class="metric-number">
+          <span class="counter" data-target="87" data-duration="2000"></span><span class="metric-suffix">%</span>
+        </span>
+        <span class="metric-label">Recovery Rate</span>
+        <p class="metric-sub">Full treatment completion</p>
+      </div>
+
+      <div class="metric-card reveal reveal-delay-4">
+        <div class="metric-card-icon" aria-hidden="true">🏘</div>
+        <span class="metric-number">
+          <span class="counter" data-target="38" data-duration="1500"></span><span class="metric-suffix">+</span>
+        </span>
+        <span class="metric-label">Communities Reached</span>
+        <p class="metric-sub">Across 4 Dar es Salaam districts</p>
+      </div>
+
+    </div>
+
+    <!-- EA Transparency Box -->
+    <div class="ea-transparency reveal">
+      <div>
+        <span class="label">Budget Transparency</span>
+        <h3>Where Your Money Goes</h3>
+        <p>
+          We believe donors deserve to know exactly how their contributions are
+          used. In line with Effective Altruism principles, we publish full
+          financial reports annually.
+        </p>
+        <br>
+        <a href="#" class="btn btn-teal" style="margin-top:.5rem">View Annual Report →</a>
+      </div>
+      <div class="cost-breakdown" role="list">
+        <div class="cost-bar-item" role="listitem">
+          <span class="cost-bar-label">Direct Programs</span>
+          <div class="cost-bar-track" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="78% to direct programs">
+            <div class="cost-bar-fill programs" style="--w: 78%" data-pct="78"></div>
+          </div>
+          <span class="cost-bar-pct">78%</span>
+        </div>
+        <div class="cost-bar-item" role="listitem">
+          <span class="cost-bar-label">Administration</span>
+          <div class="cost-bar-track" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100" aria-label="12% to administration">
+            <div class="cost-bar-fill admin" style="--w: 12%" data-pct="12"></div>
+          </div>
+          <span class="cost-bar-pct">12%</span>
+        </div>
+        <div class="cost-bar-item" role="listitem">
+          <span class="cost-bar-label">Research & M&E</span>
+          <div class="cost-bar-track" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" aria-label="10% to research">
+            <div class="cost-bar-fill research" style="--w: 10%" data-pct="10"></div>
+          </div>
+          <span class="cost-bar-pct">10%</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5 — HOW IT WORKS
+     ============================================================ -->
+<section id="process" class="process-section section-pad" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="label">Our Process</span>
+      <h2 id="process-heading">How We Deliver Care</h2>
+      <p>A structured, repeatable process that ensures quality care from first contact to full recovery.</p>
+    </div>
+
+    <div class="process-steps" role="list">
+
+      <div class="process-step reveal reveal-delay-1" role="listitem">
+        <div class="step-num" aria-hidden="true">1</div>
+        <h3>Identify</h3>
+        <p>Community health workers map vulnerable populations through door-to-door surveys and mobile screening events.</p>
+      </div>
+
+      <div class="process-step reveal reveal-delay-2" role="listitem">
+        <div class="step-num" aria-hidden="true">2</div>
+        <h3>Diagnose</h3>
+        <p>Free rapid diagnostic testing at our health posts or mobile clinics provides results within 30 minutes.</p>
+      </div>
+
+      <div class="process-step reveal reveal-delay-3" role="listitem">
+        <div class="step-num" aria-hidden="true">3</div>
+        <h3>Treat</h3>
+        <p>Evidence-based treatment protocols aligned with WHO guidelines, with patient navigators ensuring adherence.</p>
+      </div>
+
+      <div class="process-step reveal reveal-delay-4" role="listitem">
+        <div class="step-num" aria-hidden="true">4</div>
+        <h3>Monitor</h3>
+        <p>Monthly follow-up visits and a digital health record system track outcomes and flag patients at risk of dropout.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 6 — GET INVOLVED
+     ============================================================ -->
+<section id="involved" class="involved-section section-pad" aria-labelledby="involved-heading">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="label">Take Action</span>
+      <h2 id="involved-heading">Join the Movement</h2>
+      <p>There are many ways to contribute — every action, every dollar, and every hour directly saves lives.</p>
+    </div>
+
+    <div class="involved-cards">
+
+      <article class="involved-card involved-card-volunteer reveal reveal-delay-1">
+        <div class="involved-card-icon" aria-hidden="true">🙋</div>
+        <h3>Volunteer</h3>
+        <p>
+          Join our network of community health workers, educators, logistics
+          volunteers, or healthcare professionals. We offer training, mentorship,
+          and a rewarding team experience in the field.
+        </p>
+        <a href="#" class="btn btn-white">Apply to Volunteer</a>
+      </article>
+
+      <article class="involved-card involved-card-donate reveal reveal-delay-2">
+        <div class="involved-card-icon" aria-hidden="true">💛</div>
+        <h3>Donate</h3>
+        <p>
+          $4.20 provides one full malaria treatment. $25 provides a month of HIV
+          medication. Your donation is maximally effective — we track exactly
+          where every dollar goes.
+        </p>
+        <a href="#" class="btn btn-white" data-modal="donate">Donate Today</a>
+      </article>
+
+      <article class="involved-card involved-card-partner reveal reveal-delay-3">
+        <div class="involved-card-icon" aria-hidden="true">🏛</div>
+        <h3>Partner</h3>
+        <p>
+          We work with NGOs, government bodies, healthcare companies, and
+          foundations to scale our programs. If your organization shares our
+          mission, let's build something together.
+        </p>
+        <a href="#" class="btn btn-teal-solid">Explore Partnership</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7 — TRUST & CREDIBILITY
+     ============================================================ -->
+<section id="trust" class="trust-section section-pad" aria-labelledby="trust-heading">
+  <div class="container">
+    <div class="trust-grid">
+
+      <!-- Testimonials -->
+      <div class="trust-left">
+        <div class="section-header reveal">
+          <span class="label" style="color:var(--teal-300)">Voices</span>
+          <h2 id="trust-heading" style="color:var(--white)">Stories of Transformation</h2>
+        </div>
+
+        <div class="testimonials">
+          <blockquote class="testimonial-card reveal reveal-delay-1">
+            <p class="testimonial-quote">
+              I was diagnosed with malaria and couldn't afford the treatment. Daav's team came to our community, tested me for free, and gave me the medication. Within two weeks I was back at work.
+            </p>
+            <footer class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">JM</div>
+              <div>
+                <span class="testimonial-name">John Msangi</span>
+                <span class="testimonial-role">Patient — Temeke District, 2024</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card reveal reveal-delay-2">
+            <p class="testimonial-quote">
+              The health education sessions changed how our whole community thinks about HIV. The stigma is decreasing and more people are getting tested. Daav made that possible.
+            </p>
+            <footer class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">FK</div>
+              <div>
+                <span class="testimonial-name">Fatuma Khalid</span>
+                <span class="testimonial-role">Community Leader — Kinondoni, 2023</span>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Partners + Transparency -->
+      <div class="trust-right reveal">
+        <div class="section-header" style="margin-bottom:1.5rem">
+          <span class="label" style="color:var(--teal-300)">Trust</span>
+          <h3 style="color:var(--white);font-size:1.6rem">Our Commitments</h3>
+        </div>
+
+        <div class="transparency-box">
+          <div class="transparency-box-icon" aria-hidden="true">🛡</div>
+          <div>
+            <h4>Full Financial Transparency</h4>
+            <p>We publish quarterly impact reports, annual audited financials, and real-time cost-per-outcome metrics on our open data dashboard.</p>
+          </div>
+        </div>
+
+        <div class="section-header" style="margin:2rem 0 1rem">
+          <span class="label" style="color:var(--teal-300)">Partners & Supporters</span>
+        </div>
+
+        <div class="partners-grid" role="list">
+          <div class="partner-logo" role="listitem">Ministry of Health Tanzania</div>
+          <div class="partner-logo" role="listitem">WHO Tanzania</div>
+          <div class="partner-logo" role="listitem">UNAIDS</div>
+          <div class="partner-logo" role="listitem">USAID</div>
+          <div class="partner-logo" role="listitem">GiveWell Charity</div>
+          <div class="partner-logo" role="listitem">Rotary International</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html" class="logo-container" aria-label="Daav home" style="margin-bottom:.5rem">
+          <img src="assets/Daav_logo.webp" alt="Daav NGO Logo" class="logo-img" loading="lazy">
+        </a>
+        <p>Fighting infections in Dar es Salaam through evidence-based care, community outreach, and radical transparency.</p>
+
+        <div class="footer-socials" role="list">
+          <a href="#" class="social-link" aria-label="Twitter" role="listitem">𝕏</a>
+          <a href="#" class="social-link" aria-label="Facebook" role="listitem">f</a>
+          <a href="#" class="social-link" aria-label="Instagram" role="listitem">📸</a>
+          <a href="#" class="social-link" aria-label="LinkedIn" role="listitem">in</a>
+          <a href="#" class="social-link" aria-label="YouTube" role="listitem">▶</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Organization</h5>
+        <ul role="list">
+          <li><a href="#">About Daav</a></li>
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press & Media</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Programs</h5>
+        <ul role="list">
+          <li><a href="#">Malaria Care</a></li>
+          <li><a href="#">HIV/AIDS Support</a></li>
+          <li><a href="#">TB Treatment</a></li>
+          <li><a href="#">Mobile Clinics</a></li>
+          <li><a href="#">Impact Data</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <address style="font-style:normal">
+          <p class="footer-contact-item">
+            <span aria-hidden="true">📍</span>
+            <span>Plot 32, Makunganya St., Ilala, Dar es Salaam, Tanzania</span>
+          </p>
+          <p class="footer-contact-item">
+            <span aria-hidden="true">📞</span>
+            <a href="tel:+255620196710" style="color:rgba(255,255,255,.65)">+255 62 019 6710</a>
+          </p>
+          <p class="footer-contact-item">
+            <span aria-hidden="true">✉</span>
+            <a href="mailto:info@daav.or.tz" style="color:rgba(255,255,255,.65)">info@daav.or.tz</a>
+          </p>
+          <p class="footer-contact-item">
+            <span aria-hidden="true">🕐</span>
+            <span>Mon–Fri, 8:00 AM – 5:00 PM EAT</span>
+          </p>
+        </address>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Daav. Registered NGO in Tanzania (Reg. No. 00029175). All rights reserved.</p>
+      <nav class="footer-bottom-links" aria-label="Footer legal links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Annual Report</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     DONATION MODAL
+     ============================================================ -->
+<div id="donateModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close" aria-label="Close donation modal">✕</button>
+    <h3 id="modal-title">Make a Difference Today</h3>
+    <p>Every donation goes directly to infection treatment and prevention in Dar es Salaam.</p>
+
+    <div class="donation-amounts" role="group" aria-label="Donation amounts">
+      <button class="amount-btn active" data-amount="10">
+        $10 <small>2 Malaria Tests</small>
+      </button>
+      <button class="amount-btn" data-amount="25">
+        $25 <small>1 Month HIV Meds</small>
+      </button>
+      <button class="amount-btn" data-amount="50">
+        $50 <small>TB Full Course</small>
+      </button>
+      <button class="amount-btn" data-amount="100">
+        $100 <small>10 Families</small>
+      </button>
+    </div>
+
+    <label for="customAmount" style="font-size:.85rem;font-weight:600;display:block;margin-bottom:.4rem">
+      Or enter a custom amount (USD)
+    </label>
+    <input
+      type="number"
+      id="customAmount"
+      class="modal-input"
+      placeholder="$ Enter amount"
+      min="1"
+      aria-label="Custom donation amount in USD"
+    />
+
+    <button class="modal-submit" type="button">
+      Donate Securely →
+    </button>
+
+    <p class="modal-secure">
+      <span aria-hidden="true">🔒</span> Secure · 100% goes to programs · Tax deductible
+    </p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
