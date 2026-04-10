@@ -1528,10 +1528,10 @@ p  { font-size: clamp(.95rem, 1.5vw, 1.05rem); color: var(--ink-70); max-width: 
 @media (max-width: 768px) {
   .hero-bg { background-attachment: scroll !important; }
 }
- . l o g o   { 
-     h e i g h t :   4 0 p x ; 
-     w i d t h :   a u t o ; 
-     o b j e c t - f i t :   c o n t a i n ; 
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* Logo Responsive container */

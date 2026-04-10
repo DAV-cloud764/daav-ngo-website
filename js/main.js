@@ -36,6 +36,10 @@ const Nav = (() => {
     ham?.addEventListener('click', toggleMobile);
     cls?.addEventListener('click', toggleMobile);
     mob?.querySelectorAll('a:not(.dropdown-toggle)').forEach(a => a.addEventListener('click', () => { 
+      if (open) toggleMobile();
+    }));
+
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
       toggle.addEventListener('click', function (e) {
         if (window.innerWidth <= 768) {
           e.preventDefault();

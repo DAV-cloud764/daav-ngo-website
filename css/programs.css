@@ -449,7 +449,7 @@
 /* Bar chart */
 .bar-chart { display: flex; flex-direction: column; gap: .9rem; }
 
-.bar-row { display: flex; align-items: center; gap .75rem; }
+.bar-row { display: flex; align-items: center; gap: .75rem; }
 
 .bar-row-label {
   font-size: .82rem;
