@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Daav Impact Data — transparent metrics, program outcomes, cost-per-intervention data and financial reporting for our health programs in Dar es Salaam."/>
+  <title>Daav NGO | Impact Data</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/Daav_logo.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/Daav_logo.webp">
+  <link rel="shortcut icon" href="../assets/Daav_logo.webp">
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <link rel="stylesheet" href="../css/programs.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    .seq-line { opacity:0; transform:translateY(18px); transition:opacity .55s var(--ease-out-expo),transform .55s var(--ease-out-expo); }
+    .seq-line.visible { opacity:1; transform:translateY(0); }
+
+    /* Hero override for data page */
+    .data-page-hero { background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80'); }
+
+    /* Big number banner */
+    .kpi-banner {
+      background: var(--teal-900);
+      padding: 3.5rem 0;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .kpi-cell {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,.1);
+      transition: background .25s;
+    }
+    .kpi-cell:last-child { border-right: none; }
+    .kpi-cell:hover { background: rgba(255,255,255,.06); }
+
+    .kpi-num {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+      color: var(--white);
+      line-height: 1;
+      display: block;
+      margin-bottom: .3rem;
+    }
+
+    .kpi-num em { color: var(--amber); font-style: normal; }
+
+    .kpi-lbl {
+      font-family: var(--font-mono);
+      font-size: .7rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      display: block;
+    }
+
+    /* Chart section */
+    .bar-row { display: flex; align-items: center; gap: .75rem; margin-bottom: .8rem; }
+    .bar-row:last-child { margin-bottom: 0; }
+
+    /* Year-over-year grid */
+    .yoy-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .yoy-card {
+      background: var(--sand);
+      border: 1px solid var(--bone);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .yoy-year {
+      font-family: var(--font-mono);
+      font-size: .75rem;
+      color: var(--teal-500);
+      font-weight: 700;
+      letter-spacing: .08em;
+      display: block;
+      margin-bottom: .5rem;
+    }
+
+    .yoy-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--ink);
+      line-height: 1;
+      display: block;
+      margin-bottom: .2rem;
+    }
+
+    .yoy-delta {
+      font-size: .78rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+    }
+
+    .yoy-delta.up   { color: #059669; }
+    .yoy-delta.down { color: #dc2626; }
+
+    .yoy-lbl {
+      font-size: .78rem;
+      color: var(--ink-40);
+      display: block;
+      margin-top: .15rem;
+    }
+
+    /* EA section */
+    .ea-section {
+      background: var(--teal-950);
+      padding: clamp(3rem, 6vw, 6rem) 0;
+    }
+
+    .ea-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .ea-section h2,
+    .ea-section .label { color: var(--white); }
+    .ea-section p { color: rgba(255,255,255,.6); }
+
+    .cpi-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+
+    .cpi-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.2rem;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-md);
+      gap: 1rem;
+      transition: background .2s;
+    }
+    .cpi-item:hover { background: rgba(255,255,255,.1); }
+
+    .cpi-program {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .cpi-ico { font-size: 1.2rem; }
+    .cpi-name { font-size: .9rem; font-weight: 600; color: var(--white); }
+    .cpi-desc { font-size: .78rem; color: rgba(255,255,255,.45); font-family: var(--font-mono); }
+
+    .cpi-cost {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--amber);
+      white-space: nowrap;
+    }
+
+    /* Table wrapper */
+    .table-wrap {
+      background: var(--white);
+      border: 1px solid var(--bone);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    /* Data stories */
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .story-card {
+      background: var(--white);
+      border: 1px solid var(--bone);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .story-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lift); }
+
+    .story-card-img {
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .story-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s var(--ease-out-expo);
+    }
+
+    .story-card:hover .story-card-img img { transform: scale(1.06); }
+
+    .story-card-body { padding: 1.4rem; }
+
+    .story-card-tag {
+      font-family: var(--font-mono);
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--teal-500);
+      display: block;
+      margin-bottom: .4rem;
+    }
+
+    .story-card-body h3 { font-size: 1.05rem; margin-bottom: .4rem; }
+    .story-card-body p  { font-size: .85rem; max-width: none; }
+
+    @media (max-width:1024px) {
+      .kpi-grid { grid-template-columns: repeat(3,1fr); }
+      .kpi-cell:nth-child(3) { border-right: none; }
+      .kpi-cell:nth-child(4), .kpi-cell:nth-child(5) { border-top: 1px solid rgba(255,255,255,.1); }
+      .yoy-grid { grid-template-columns: repeat(2,1fr); }
+      .ea-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .story-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width:600px) {
+      .kpi-grid { grid-template-columns: repeat(2,1fr); }
+      .kpi-cell:nth-child(2) { border-right: none; }
+      .kpi-cell:nth-child(3),
+      .kpi-cell:nth-child(4),
+      .kpi-cell:nth-child(5) { border-top: 1px solid rgba(255,255,255,.1); }
+      .kpi-cell:nth-child(4) { border-right: none; }
+      .story-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="logo-container" aria-label="Daav home">
+    <img src="../assets/Daav_logo.webp" alt="Daav NGO Logo" class="logo-img" loading="eager">
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="../index.html#about">About</a></li>
+    <li class="dropdown">
+      <a href="#">Programs</a>
+      <div class="dropdown-menu">
+        <a href="hiv-aids-support.html"><span class="dm-icon">🎗</span> HIV/AIDS Support</a>
+        <a href="malaria-care.html"><span class="dm-icon">🦟</span> Malaria Care</a>
+        <a href="tb-treatment.html"><span class="dm-icon">🫁</span> TB Treatment</a>
+        <a href="mobile-clinics.html"><span class="dm-icon">🚐</span> Mobile Clinics</a>
+        <a href="impact-data.html"><span class="dm-icon">📊</span> Impact Data</a>
+      </div>
+    </li>
+    <li><a href="../index.html#impact">Impact</a></li>
+    <li><a href="../index.html#involved">Get Involved</a></li>
+    <li><a href="../index.html#trust">Partners</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-icon" id="darkToggle" aria-label="Toggle dark mode">🌙</button>
+    <a href="#" class="btn-donate-nav" data-modal="donate">Donate Now</a>
+    <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" role="dialog">
+  <button class="mobile-nav-close">✕</button>
+  <a href="../index.html">Home</a>
+  <a href="hiv-aids-support.html">HIV/AIDS Support</a>
+  <a href="malaria-care.html">Malaria Care</a>
+  <a href="tb-treatment.html">TB Treatment</a>
+  <a href="mobile-clinics.html">Mobile Clinics</a>
+  <a href="impact-data.html">Impact Data</a>
+  <a href="#" data-modal="donate" style="color:var(--amber)">Donate →</a>
+</div>
+
+<!-- HERO -->
+<header class="prog-hero">
+  <div class="prog-hero-bg data-page-hero" aria-hidden="true"></div>
+  <div class="prog-hero-content">
+    <div class="prog-hero-breadcrumb">
+      <a href="../index.html">Home</a><span class="sep">/</span>
+      <a href="#">Programs</a><span class="sep">/</span>
+      <span class="current">Impact Data</span>
+    </div>
+    <div class="prog-hero-tag"><span>📊 Transparency Report</span></div>
+    <h1>Impact Data &amp;<br>Transparency</h1>
+    <p class="tagline">Every number here represents a real person, a real intervention, a real outcome. We publish our data because accountability is the foundation of trust — and trust is the foundation of impact.</p>
+    <div class="prog-hero-stats">
+      <div class="prog-hero-stat"><span class="num"><span class="counter" data-target="10427" data-dur="2200"></span><em>+</em></span><span class="lbl">Total Patients Served</span></div>
+      <div class="prog-hero-stat"><span class="num">$<span class="counter" data-target="4.2" data-dur="1800"></span></span><span class="lbl">Cost per Intervention</span></div>
+      <div class="prog-hero-stat"><span class="num">Q1 <span style="color:var(--amber)">2025</span></span><span class="lbl">Last Data Update</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- KPI BANNER -->
+<section class="kpi-banner" aria-label="Key performance indicators">
+  <div class="container">
+    <div class="kpi-grid reveal">
+      <div class="kpi-cell">
+        <span class="kpi-num"><span class="counter" data-target="4200" data-dur="2000"></span><em>+</em></span>
+        <span class="kpi-lbl">Malaria Patients</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="kpi-num"><span class="counter" data-target="3840" data-dur="2100"></span><em>+</em></span>
+        <span class="kpi-lbl">HIV/ARV Support</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="kpi-num"><span class="counter" data-target="2380" data-dur="2000"></span><em>+</em></span>
+        <span class="kpi-lbl">TB Patients</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="kpi-num"><span class="counter" data-target="22500" data-dur="2300"></span><em>+</em></span>
+        <span class="kpi-lbl">Mobile Consultations</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="kpi-num"><span class="counter" data-target="18500" data-dur="2200"></span><em>+</em></span>
+        <span class="kpi-lbl">Bed Nets Distributed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARTS SECTION -->
+<section class="chart-section" aria-labelledby="charts-h">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Program Performance</span>
+      <h2 id="charts-h">Where We're Working &amp; What We're Achieving</h2>
+    </div>
+
+    <div class="chart-row">
+      <!-- Case distribution bar chart -->
+      <div class="chart-card reveal reveal-delay-1">
+        <h3>Patient Distribution by Program</h3>
+        <p class="chart-sub">2024 · All Daav programs · Dar es Salaam</p>
+        <div class="bar-chart" role="list">
+          <div class="bar-row" role="listitem">
+            <span class="bar-row-label">Mobile Clinics</span>
+            <div class="bar-row-track"><div class="bar-row-fill malaria" style="--w:85%"><span>7,200</span></div></div>
+          </div>
+          <div class="bar-row" role="listitem">
+            <span class="bar-row-label">Malaria Care</span>
+            <div class="bar-row-track"><div class="bar-row-fill malaria" style="--w:50%"><span>4,200</span></div></div>
+          </div>
+          <div class="bar-row" role="listitem">
+            <span class="bar-row-label">HIV/AIDS</span>
+            <div class="bar-row-track"><div class="bar-row-fill hiv" style="--w:46%"><span>3,840</span></div></div>
+          </div>
+          <div class="bar-row" role="listitem">
+            <span class="bar-row-label">TB Treatment</span>
+            <div class="bar-row-track"><div class="bar-row-fill tb" style="--w:28%"><span>2,380</span></div></div>
+          </div>
+          <div class="bar-row" role="listitem">
+            <span class="bar-row-label">Other / Referral</span>
+            <div class="bar-row-track"><div class="bar-row-fill other" style="--w:12%"><span>1,007</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Donut: fund allocation -->
+      <div class="chart-card reveal reveal-delay-2">
+        <h3>Fund Allocation 2024</h3>
+        <p class="chart-sub">Total expenditure: $124,800 · Audited</p>
+        <div class="donut-wrap">
+          <div class="donut" role="img" aria-label="Fund allocation donut chart" style="background: conic-gradient(var(--teal-500) 0% 45%, var(--amber) 45% 67%, var(--teal-300) 67% 80%, var(--bone) 80% 100%)"></div>
+          <div class="donut-legend">
+            <div class="donut-legend-item"><span class="donut-dot" style="background:var(--teal-500)"></span>Direct Treatment (45%)</div>
+            <div class="donut-legend-item"><span class="donut-dot" style="background:var(--amber)"></span>Mobile Clinics (22%)</div>
+            <div class="donut-legend-item"><span class="donut-dot" style="background:var(--teal-300)"></span>Community Education (13%)</div>
+            <div class="donut-legend-item"><span class="donut-dot" style="background:var(--bone)"></span>Admin &amp; M&amp;E (20%)</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;padding:1rem;background:var(--teal-50);border-radius:var(--radius-sm);border:1px solid var(--teal-100)">
+          <p style="font-size:.82rem;max-width:none;color:var(--teal-700);font-weight:500">💡 <strong>80%</strong> of all funds reached direct beneficiaries — above the 75% NGO sector benchmark.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Year-over-year -->
+    <div class="section-header reveal" style="margin-top:3rem;margin-bottom:1.5rem">
+      <span class="label">Year-over-Year</span>
+      <h3>Patient Growth Since 2021</h3>
+    </div>
+    <div class="yoy-grid reveal">
+      <div class="yoy-card">
+        <span class="yoy-year">2021</span>
+        <span class="yoy-num">1,240</span>
+        <span class="yoy-delta up">↑ Baseline year</span>
+        <span class="yoy-lbl">Patients served</span>
+      </div>
+      <div class="yoy-card">
+        <span class="yoy-year">2022</span>
+        <span class="yoy-num">3,890</span>
+        <span class="yoy-delta up">↑ +214%</span>
+        <span class="yoy-lbl">Mobile clinic expansion</span>
+      </div>
+      <div class="yoy-card">
+        <span class="yoy-year">2023</span>
+        <span class="yoy-num">7,280</span>
+        <span class="yoy-delta up">↑ +87%</span>
+        <span class="yoy-lbl">New HIV programme launched</span>
+      </div>
+      <div class="yoy-card">
+        <span class="yoy-year">2024</span>
+        <span class="yoy-num">10,427</span>
+        <span class="yoy-delta up">↑ +43%</span>
+        <span class="yoy-lbl">Scaled TB + outreach</span>
+      </div>
+    </div>
+
+    <!-- Org timeline -->
+    <div class="chart-row" style="margin-top:2rem">
+      <div class="chart-card reveal reveal-delay-1" style="grid-column: 1 / -1">
+        <h3>Daav — Organisation Timeline</h3>
+        <p class="chart-sub">Key milestones since founding</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">2019</span>
+            <h4>Daav Founded</h4>
+            <p>Organisation registered in Dar es Salaam with a focus on malaria care in Temeke district. First community health post opened.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">2020</span>
+            <h4>COVID-19 Response Pivot</h4>
+            <p>Daav adapted malaria infrastructure for COVID-19 testing and isolation support, reaching 800 households during the pandemic peak.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">2021</span>
+            <h4>Mobile Clinic Programme Launched</h4>
+            <p>First mobile unit deployed. Within 8 months, daily routes established across Temeke, Ilala, and Kinondoni districts.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">2022</span>
+            <h4>HIV/AIDS Programme &amp; USAID Partnership</h4>
+            <p>HIV testing and ARV adherence support launched with USAID technical partnership. 800 patients enrolled in first year.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">2023</span>
+            <h4>TB Programme &amp; GiveWell Recognition</h4>
+            <p>Community-based DOT programme launched. Daav shortlisted by GiveWell as a standout charity for cost-effectiveness research.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">2024–25</span>
+            <h4>Scale &amp; Systems Strengthening</h4>
+            <p>Third mobile unit deployed. Digital health records system launched. Target: 15,000 patients served by end of 2025.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EA COST-PER-INTERVENTION -->
+<section class="ea-section" aria-labelledby="ea-h">
+  <div class="container">
+    <div class="ea-grid">
+      <div>
+        <div class="section-header reveal">
+          <span class="label" style="color:var(--teal-300)">Effective Altruism Metrics</span>
+          <h2 id="ea-h">Cost Per Intervention</h2>
+          <p>We calculate and publish the fully-loaded cost per intervention for every programme — including overheads — so donors can compare our efficiency against international benchmarks.</p>
+        </div>
+        <p style="margin-top:1rem;font-size:.88rem;color:rgba(255,255,255,.5);max-width:none">Costs include: staff time, medicines/supplies, transport, overhead allocation, and M&amp;E. Last verified by external auditor: December 2024.</p>
+      </div>
+      <div class="cpi-list reveal reveal-delay-1">
+        <div class="cpi-item">
+          <div class="cpi-program"><span class="cpi-ico">🦟</span><div><span class="cpi-name">Malaria Treatment</span><span class="cpi-desc">RDT + ACT + follow-up</span></div></div>
+          <span class="cpi-cost">$4.20</span>
+        </div>
+        <div class="cpi-item">
+          <div class="cpi-program"><span class="cpi-ico">🎗</span><div><span class="cpi-name">HIV ARV Adherence</span><span class="cpi-desc">1 patient · 1 month</span></div></div>
+          <span class="cpi-cost">$11.80</span>
+        </div>
+        <div class="cpi-item">
+          <div class="cpi-program"><span class="cpi-ico">🫁</span><div><span class="cpi-name">TB DOT Support</span><span class="cpi-desc">Full 6-month course</span></div></div>
+          <span class="cpi-cost">$38.00</span>
+        </div>
+        <div class="cpi-item">
+          <div class="cpi-program"><span class="cpi-ico">🚐</span><div><span class="cpi-name">Mobile Clinic Visit</span><span class="cpi-desc">Per patient consultation</span></div></div>
+          <span class="cpi-cost">$14.20</span>
+        </div>
+        <div class="cpi-item">
+          <div class="cpi-program"><span class="cpi-ico">🛏</span><div><span class="cpi-name">Bed Net Distribution</span><span class="cpi-desc">LLIN + installation support</span></div></div>
+          <span class="cpi-cost">$6.50</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCIAL TRANSPARENCY TABLE -->
+<section class="prog-section prog-section-sand" aria-labelledby="fin-h">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Financial Transparency</span>
+      <h2 id="fin-h">2024 Programme Expenditure</h2>
+      <p>Full audited financials are published annually. Below is our programme-level expenditure breakdown for the 2024 financial year.</p>
+    </div>
+    <div class="table-wrap reveal reveal-delay-1">
+      <table class="transparency-table" role="table" aria-label="2024 programme expenditure breakdown">
+        <thead>
+          <tr>
+            <th>Programme</th>
+            <th>Patients Served</th>
+            <th>Total Spend</th>
+            <th>Cost / Patient</th>
+            <th>Outcome Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-program">🦟 Malaria Care</td>
+            <td>4,200</td>
+            <td>$17,640</td>
+            <td>$4.20</td>
+            <td><span class="td-badge high">High</span></td>
+          </tr>
+          <tr>
+            <td class="td-program">🎗 HIV/AIDS Support</td>
+            <td>3,840</td>
+            <td>$45,312</td>
+            <td>$11.80</td>
+            <td><span class="td-badge high">High</span></td>
+          </tr>
+          <tr>
+            <td class="td-program">🫁 TB Treatment</td>
+            <td>2,380</td>
+            <td>$90,440</td>
+            <td>$38.00</td>
+            <td><span class="td-badge high">High</span></td>
+          </tr>
+          <tr>
+            <td class="td-program">🚐 Mobile Clinics</td>
+            <td>7,200 visits</td>
+            <td>$102,240</td>
+            <td>$14.20</td>
+            <td><span class="td-badge high">High</span></td>
+          </tr>
+          <tr>
+            <td class="td-program">🛏 Bed Net Distribution</td>
+            <td>5,400 HH</td>
+            <td>$35,100</td>
+            <td>$6.50</td>
+            <td><span class="td-badge medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td class="td-program" style="font-weight:700;color:var(--teal-700)">Total 2024</td>
+            <td style="font-weight:700">—</td>
+            <td style="font-weight:700">$290,732</td>
+            <td style="font-weight:700">$10.42 avg</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:1rem;font-size:.82rem;color:var(--ink-40);font-family:var(--font-mono)">* Audited by PKF Tanzania. Full report available on request · info@daav.or.tz</p>
+  </div>
+</section>
+
+<!-- DATA STORIES -->
+<section class="prog-section prog-section-light" aria-labelledby="stories-h">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="label">Data Stories</span>
+      <h2 id="stories-h">Numbers With Names Behind Them</h2>
+      <p>Impact data is most powerful when it's connected to real lives. These three stories illustrate what the numbers mean on the ground.</p>
+    </div>
+    <div class="story-grid">
+      <article class="story-card reveal reveal-delay-1">
+        <div class="story-card-img">
+          <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=600&q=80" alt="Community members in Temeke district" loading="lazy"/>
+        </div>
+        <div class="story-card-body">
+          <span class="story-card-tag">🦟 Malaria · Temeke</span>
+          <h3>From Fever to School in 4 Days</h3>
+          <p>Eight-year-old Amina was tested, diagnosed, and treated in a single morning at our Mtoni mobile clinic. She was back in school by Thursday — at a total programme cost of $4.20.</p>
+        </div>
+      </article>
+      <article class="story-card reveal reveal-delay-2">
+        <div class="story-card-img">
+          <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80" alt="Patient receiving care" loading="lazy"/>
+        </div>
+        <div class="story-card-body">
+          <span class="story-card-tag">🫁 TB · Kinondoni</span>
+          <h3>Six Months. One Worker. One Cure.</h3>
+          <p>Hassan, a market trader diagnosed with TB in 2023, completed his full 6-month treatment course with daily DOT support from our community worker — avoiding MDR-TB and returning to work.</p>
+        </div>
+      </article>
+      <article class="story-card reveal reveal-delay-3">
+        <div class="story-card-img">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="HIV counselling session" loading="lazy"/>
+        </div>
+        <div class="story-card-body">
+          <span class="story-card-tag">🎗 HIV · Ilala</span>
+          <h3>91% Adherence: Behind the Number</h3>
+          <p>Our 91% ARV adherence rate reflects 200+ patient navigators making daily check-in calls, organising medication pickups, and providing the quiet, consistent support that life-long treatment demands.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="prog-cta">
+  <div class="container">
+    <div class="prog-cta-inner">
+      <div class="prog-cta-text">
+        <h2>Trust the Data. Fund the Work.</h2>
+        <p>You've seen the numbers. Every dollar we receive is tracked, reported, and published. Join thousands of donors who back high-impact health care in Tanzania.</p>
+      </div>
+      <div class="prog-cta-buttons">
+        <a href="#" class="btn-white-cta" data-modal="donate">Donate Now</a>
+        <a href="../index.html#involved" class="btn-ghost-cta">Partner with Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo-container" aria-label="Daav home">
+    <img src="../assets/Daav_logo.webp" alt="Daav NGO Logo" class="logo-img" loading="eager">
+  </a>
+        <p>Fighting infections in Dar es Salaam through evidence-based care, community outreach, and radical transparency.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Programs</h5><ul>
+        <li><a href="hiv-aids-support.html">HIV/AIDS Support</a></li>
+        <li><a href="malaria-care.html">Malaria Care</a></li>
+        <li><a href="tb-treatment.html">TB Treatment</a></li>
+        <li><a href="mobile-clinics.html">Mobile Clinics</a></li>
+        <li><a href="impact-data.html">Impact Data</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Organisation</h5><ul>
+        <li><a href="../index.html#about">About Daav</a></li>
+        <li><a href="../index.html#impact">Our Impact</a></li>
+        <li><a href="../index.html#involved">Get Involved</a></li>
+        <li><a href="../index.html#trust">Partners</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Contact</h5>
+        <address style="font-style:normal">
+          <p class="footer-contact-item"><span>📍</span><span>Plot 32, Makunganya St., Ilala, Dar es Salaam</span></p>
+          <p class="footer-contact-item"><span>✉</span><a href="mailto:info@daav.or.tz" style="color:rgba(255,255,255,.65)">info@daav.or.tz</a></p>
+          <p class="footer-contact-item"><span>📞</span><a href="tel:+255220001234" style="color:rgba(255,255,255,.65)">+255 22 000 1234</a></p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Daav. Registered NGO in Tanzania (Reg. No. 00029175).</p>
+      <nav class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Annual Report</a><a href="#">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<div id="donateModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close">✕</button>
+    <h3 id="modal-title">Make a Data-Backed Donation</h3>
+    <p>You've seen where every dollar goes. Choose a program to support or give to our general fund.</p>
+    <div class="donation-amounts">
+      <button class="amount-btn active">$10 <small>Malaria Treatment</small></button>
+      <button class="amount-btn">$25 <small>HIV Month Support</small></button>
+      <button class="amount-btn">$40 <small>TB DOT Month</small></button>
+      <button class="amount-btn">$320 <small>Clinic Day</small></button>
+    </div>
+    <input type="number" id="customAmount" class="modal-input" placeholder="$ Custom amount" min="1"/>
+    <button class="modal-submit">Donate Securely →</button>
+    <p class="modal-secure">🔒 Secure · 100% to programs · Tax deductible</p>
+  </div>
+</div>
+
+<script src="../js/programs.js"></script>
+</body>
+</html>

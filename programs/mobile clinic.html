@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Daav Mobile Clinics Program — remote healthcare delivery, on-site diagnosis, medicine distribution and rural outreach in Tanzania."/>
+  <title>Daav NGO | Mobile Clinics</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/Daav_logo.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/Daav_logo.webp">
+  <link rel="shortcut icon" href="../assets/Daav_logo.webp">
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <link rel="stylesheet" href="../css/programs.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    .seq-line { opacity:0; transform:translateY(18px); transition:opacity .55s var(--ease-out-expo),transform .55s var(--ease-out-expo); }
+    .seq-line.visible { opacity:1; transform:translateY(0); }
+    .mob-bg { background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1920&q=80'); }
+    .route-card { background: var(--white); border: 1px solid var(--bone); border-radius: var(--radius-md); padding: 1.2rem 1.4rem; display: flex; align-items: flex-start; gap: 1rem; }
+    .route-dot { width: 42px; height: 42px; border-radius: 50%; background: var(--teal-100); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .route-card h4 { font-family: var(--font-body); font-size: .92rem; font-weight: 700; margin-bottom: .15rem; }
+    .route-card p { font-size: .82rem; max-width: none; }
+    .route-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    @media(max-width:600px) { .route-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="logo-container" aria-label="Daav home">
+    <img src="../assets/Daav_logo.webp" alt="Daav NGO Logo" class="logo-img" loading="eager">
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="../index.html#about">About</a></li>
+    <li class="dropdown">
+      <a href="#">Programs</a>
+      <div class="dropdown-menu">
+        <a href="hiv-aids-support.html"><span class="dm-icon">🎗</span> HIV/AIDS Support</a>
+        <a href="malaria-care.html"><span class="dm-icon">🦟</span> Malaria Care</a>
+        <a href="tb-treatment.html"><span class="dm-icon">🫁</span> TB Treatment</a>
+        <a href="mobile-clinics.html"><span class="dm-icon">🚐</span> Mobile Clinics</a>
+        <a href="impact-data.html"><span class="dm-icon">📊</span> Impact Data</a>
+      </div>
+    </li>
+    <li><a href="impact-data.html">Impact</a></li>
+    <li><a href="../index.html#involved">Get Involved</a></li>
+    <li><a href="../index.html#trust">Partners</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-icon" id="darkToggle" aria-label="Toggle dark mode">🌙</button>
+    <a href="#" class="btn-donate-nav" data-modal="donate">Donate Now</a>
+    <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" role="dialog">
+  <button class="mobile-nav-close">✕</button>
+  <a href="../index.html">Home</a>
+  <a href="hiv-aids-support.html">HIV/AIDS Support</a>
+  <a href="malaria-care.html">Malaria Care</a>
+  <a href="tb-treatment.html">TB Treatment</a>
+  <a href="mobile-clinics.html">Mobile Clinics</a>
+  <a href="impact-data.html">Impact Data</a>
+  <a href="#" data-modal="donate" style="color:var(--amber)">Donate →</a>
+</div>
+
+<!-- HERO -->
+<header class="prog-hero">
+  <div class="prog-hero-bg mob-bg" aria-hidden="true"></div>
+  <div class="prog-hero-content">
+    <div class="prog-hero-breadcrumb">
+      <a href="../index.html">Home</a><span class="sep">/</span>
+      <a href="#">Programs</a><span class="sep">/</span>
+      <span class="current">Mobile Clinics</span>
+    </div>
+    <div class="prog-hero-tag"><span>🚐 Health Program</span></div>
+    <h1>Mobile Clinic<br>Program</h1>
+    <p class="tagline">Healthcare that comes to you — on-site diagnosis, free medicine distribution, and specialist outreach for communities beyond the reach of fixed health facilities.</p>
+    <div class="prog-hero-stats">
+      <div class="prog-hero-stat"><span class="num"><span class="counter" data-target="3" data-dur="1200"></span></span><span class="lbl">Fully Equipped Vehicles</span></div>
+      <div class="prog-hero-stat"><span class="num"><span class="counter" data-target="480" data-dur="1800"></span><em>+</em></span><span class="lbl">Clinic Days Per Year</span></div>
+      <div class="prog-hero-stat"><span class="num"><span class="counter" data-target="22500" data-dur="2200"></span><em>+</em></span><span class="lbl">Consultations Delivered</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section class="prog-section prog-section-light" aria-labelledby="prob-h">
+  <div class="container">
+    <div class="problem-intro">
+      <div class="problem-intro-text">
+        <div class="section-header reveal">
+          <span class="label">The Challenge</span>
+          <h2 id="prob-h">Healthcare Shouldn't Depend on Where You Live</h2>
+          <p>In Dar es Salaam's rapidly expanding peri-urban fringes and informal settlements, fixed healthcare infrastructure is dramatically outpaced by population growth. For millions of residents, a clinic is a half-day journey — one that costs money, time, and often a day's wages they can't afford to lose.</p>
+        </div>
+        <div class="stat-pills reveal reveal-delay-1">
+          <div class="stat-pill"><span class="stat-pill-num">38%</span><span class="stat-pill-text">Of residents in informal settlements have no clinic within 5km</span></div>
+          <div class="stat-pill"><span class="stat-pill-num">2.5h</span><span class="stat-pill-text">Average travel time to nearest health facility in outer wards</span></div>
+          <div class="stat-pill"><span class="stat-pill-num">54%</span><span class="stat-pill-text">Of patients avoid care due to transport cost, not disease severity</span></div>
+        </div>
+      </div>
+      <div class="problem-image-wrap reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&q=80" alt="Mobile clinic vehicle serving a rural community in Tanzania" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="prog-section prog-section-sand" aria-labelledby="act-h">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="label">Our Interventions</span>
+      <h2 id="act-h">Healthcare Without Barriers</h2>
+      <p>Three fully equipped mobile units run rotating routes across Dar es Salaam's most underserved wards, delivering the same quality of care as a fixed health post — at the community's doorstep.</p>
+    </div>
+    <div class="activity-grid">
+      <article class="activity-card reveal reveal-delay-1">
+        <div class="activity-card-header"><div class="activity-icon">🚐</div><h3>On-Site Consultation &amp; Diagnosis</h3></div>
+        <p>Each mobile unit is staffed by a clinical officer, nurse, and community health worker. Full consultation, physical examination, and rapid diagnostic tests for malaria, HIV, TB, and common infections are offered free of charge.</p>
+        <ul class="activity-list">
+          <li>Full clinical consultation by trained clinical officer</li>
+          <li>Rapid diagnostic testing for malaria, HIV, TB, and typhoid</li>
+          <li>Paediatric assessments including growth monitoring</li>
+          <li>Blood pressure, blood glucose, and basic lab tests</li>
+        </ul>
+      </article>
+      <article class="activity-card reveal reveal-delay-2">
+        <div class="activity-card-header"><div class="activity-icon">💊</div><h3>Medicine Distribution</h3></div>
+        <p>Each mobile clinic carries a WHO essential medicines list stock, enabling same-day dispensing for most common conditions. Cold-chain medicines including vaccines are transported in certified portable units.</p>
+        <ul class="activity-list">
+          <li>Full essential medicines dispensed same-visit</li>
+          <li>Antimalarials, antibiotics, antifungals, ORS, and dewormers</li>
+          <li>Cold-chain vaccines including measles, polio, and BCG</li>
+          <li>Contraceptive and reproductive health supplies</li>
+        </ul>
+      </article>
+      <article class="activity-card reveal reveal-delay-3">
+        <div class="activity-card-header"><div class="activity-icon">🌍</div><h3>Rural &amp; Peri-Urban Outreach</h3></div>
+        <p>Beyond Dar es Salaam's urban core, our mobile units operate bi-monthly outreach routes to peri-urban growth corridors and coastal fishing communities that have no fixed healthcare facility.</p>
+        <ul class="activity-list">
+          <li>Bi-monthly outreach to 8 peri-urban growth zones</li>
+          <li>Coastal village clinics for fishing communities</li>
+          <li>School health days at 14 partner primary schools</li>
+          <li>Market-day clinics at high-footfall community markets</li>
+        </ul>
+      </article>
+      <article class="activity-card reveal reveal-delay-4">
+        <div class="activity-card-header"><div class="activity-icon">🔗</div><h3>Referral &amp; Linkage</h3></div>
+        <p>The mobile clinic is not an endpoint — it's a gateway. Patients requiring specialist care, surgery, or inpatient treatment are referred with transport support and a patient navigator who accompanies them to hospital.</p>
+        <ul class="activity-list">
+          <li>Formal referral agreements with 6 district hospitals</li>
+          <li>Patient navigator accompaniment for complex cases</li>
+          <li>Follow-up call within 7 days of all referrals</li>
+          <li>Feedback loop to improve triage and referral quality</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Route cards -->
+    <div class="section-header reveal" style="margin-top:3.5rem;margin-bottom:1.5rem">
+      <span class="label">Current Routes</span>
+      <h3>Where We Operate</h3>
+    </div>
+    <div class="route-grid reveal">
+      <div class="route-card"><div class="route-dot">🗺</div><div><h4>Route A — Temeke South</h4><p>Mon, Wed, Fri · Mtoni, Kigamboni, Chang'ombe</p></div></div>
+      <div class="route-card"><div class="route-dot">🗺</div><div><h4>Route B — Kinondoni North</h4><p>Tue, Thu · Msasani, Mwananyamala, Manzese</p></div></div>
+      <div class="route-card"><div class="route-dot">🗺</div><div><h4>Route C — Ubungo Peri-Urban</h4><p>Mon–Sat rotating · Kibamba, Mbezi, Goba</p></div></div>
+      <div class="route-card"><div class="route-dot">🗺</div><div><h4>Coastal Outreach</h4><p>Bi-monthly · Kisarawe, Mafia Island ferry zone</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="prog-section prog-section-light" aria-labelledby="how-h">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="label">Our Process</span>
+      <h2 id="how-h">A Clinic Day in Three Stages</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-step reveal reveal-delay-1">
+        <div class="how-step-num">1</div>
+        <h3>Deploy &amp; Set Up</h3>
+        <p>The mobile unit arrives at the scheduled community by 8 AM. A community liaison pre-announces the visit by SMS, WhatsApp community groups, and mosque/church loudspeakers the day before.</p>
+      </div>
+      <div class="how-step reveal reveal-delay-2">
+        <div class="how-step-num">2</div>
+        <h3>Consult &amp; Diagnose</h3>
+        <p>Patients are triaged, registered, and seen by the clinical officer. Rapid tests, dispensing, and health education happen on-site. Average patient time: 35 minutes from registration to departure.</p>
+      </div>
+      <div class="how-step reveal reveal-delay-3">
+        <div class="how-step-num">3</div>
+        <h3>Record &amp; Report</h3>
+        <p>All consultations are recorded digitally. Aggregate daily data is submitted to the district health management information system (DHIS2). Referral cases are tracked until hospital attendance is confirmed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="prog-section prog-section-dark" aria-labelledby="imp-h">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="label" style="color:var(--teal-300)">Measured Results</span>
+      <h2 id="imp-h" style="color:var(--white)">Mobile Clinic Impact</h2>
+    </div>
+    <div class="impact-stat-row">
+      <div class="impact-stat-card reveal reveal-delay-1"><div class="ico">🚐</div><span class="big"><span class="counter" data-target="480" data-dur="1800"></span><em>+</em></span><span class="lbl">Clinic Days Per Year</span><span class="sub">Across 3 active routes</span></div>
+      <div class="impact-stat-card reveal reveal-delay-2"><div class="ico">👩‍⚕️</div><span class="big"><span class="counter" data-target="22500" data-dur="2200"></span><em>+</em></span><span class="lbl">Consultations Delivered</span><span class="sub">Cumulative 2021–2024</span></div>
+      <div class="impact-stat-card reveal reveal-delay-3"><div class="ico">🔬</div><span class="big"><span class="counter" data-target="6800" data-dur="2000"></span><em>+</em></span><span class="lbl">Rapid Tests Conducted</span><span class="sub">Malaria, HIV, TB, typhoid</span></div>
+      <div class="impact-stat-card reveal reveal-delay-4"><div class="ico">📍</div><span class="big"><span class="counter" data-target="38" data-dur="1600"></span><em>+</em></span><span class="lbl">Communities Reached</span><span class="sub">Across 4 districts</span></div>
+    </div>
+    <div class="seq-reveal reveal" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:2rem 2.5rem;">
+      <p class="seq-line" style="font-family:var(--font-display);font-size:1.5rem;color:var(--white);max-width:none;margin-bottom:.6rem">"For 54% of our mobile clinic patients, this was their first contact with a healthcare professional in over a year."</p>
+      <p class="seq-line" style="font-size:.85rem;color:rgba(255,255,255,.5);font-family:var(--font-mono);letter-spacing:.06em;max-width:none">— Patient intake survey, Daav Mobile Clinics Programme, 2024</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="prog-cta">
+  <div class="container">
+    <div class="prog-cta-inner">
+      <div class="prog-cta-text">
+        <h2>Keep the Clinics Rolling</h2>
+        <p>Each mobile clinic day costs $320 to operate. That's less than $15 per patient seen. Help us extend our routes and reach more communities.</p>
+      </div>
+      <div class="prog-cta-buttons">
+        <a href="#" class="btn-white-cta" data-modal="donate">Fund a Clinic Day</a>
+        <a href="../index.html#involved" class="btn-ghost-cta">Join as Volunteer</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo-container" aria-label="Daav home">
+    <img src="../assets/Daav_logo.webp" alt="Daav NGO Logo" class="logo-img" loading="eager">
+  </a>
+        <p>Fighting infections in Dar es Salaam through evidence-based care, community outreach, and radical transparency.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Programs</h5><ul>
+        <li><a href="hiv-aids-support.html">HIV/AIDS Support</a></li>
+        <li><a href="malaria-care.html">Malaria Care</a></li>
+        <li><a href="tb-treatment.html">TB Treatment</a></li>
+        <li><a href="mobile-clinics.html">Mobile Clinics</a></li>
+        <li><a href="impact-data.html">Impact Data</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Organisation</h5><ul>
+        <li><a href="../index.html#about">About Daav</a></li>
+        <li><a href="../index.html#impact">Our Impact</a></li>
+        <li><a href="../index.html#involved">Get Involved</a></li>
+        <li><a href="../index.html#trust">Partners</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Contact</h5>
+        <address style="font-style:normal">
+          <p class="footer-contact-item"><span>📍</span><span>Plot 32, Makunganya St., Ilala, Dar es Salaam</span></p>
+          <p class="footer-contact-item"><span>✉</span><a href="mailto:info@daav.or.tz" style="color:rgba(255,255,255,.65)">info@daav.or.tz</a></p>
+          <p class="footer-contact-item"><span>📞</span><a href="tel:+255220001234" style="color:rgba(255,255,255,.65)">+255 22 000 1234</a></p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Daav. Registered NGO in Tanzania (Reg. No. 00029175).</p>
+      <nav class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Annual Report</a><a href="#">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<div id="donateModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close">✕</button>
+    <h3 id="modal-title">Fund Mobile Clinics</h3>
+    <p>$320 funds one full clinic day — reaching up to 25 patients with free diagnosis, medicines, and care.</p>
+    <div class="donation-amounts">
+      <button class="amount-btn active">$15 <small>1 Consultation</small></button>
+      <button class="amount-btn">$80 <small>5 Patients</small></button>
+      <button class="amount-btn">$160 <small>Half Day</small></button>
+      <button class="amount-btn">$320 <small>Full Clinic Day</small></button>
+    </div>
+    <input type="number" id="customAmount" class="modal-input" placeholder="$ Custom amount" min="1"/>
+    <button class="modal-submit">Donate Securely →</button>
+    <p class="modal-secure">🔒 Secure · 100% to programs · Tax deductible</p>
+  </div>
+</div>
+
+<script src="../js/programs.js"></script>
+</body>
+</html>

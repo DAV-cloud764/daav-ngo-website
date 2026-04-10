@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Daav HIV/AIDS Support Program — Testing, ARV adherence, counselling and stigma reduction in Dar es Salaam, Tanzania."/>
+  <title>Daav NGO | HIV/AIDS Support</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/Daav_logo.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/Daav_logo.webp">
+  <link rel="shortcut icon" href="../assets/Daav_logo.webp">
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <link rel="stylesheet" href="../css/programs.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    .seq-line { opacity:0; transform:translateY(18px); transition:opacity .55s var(--ease-out-expo), transform .55s var(--ease-out-expo); }
+    .seq-line.visible { opacity:1; transform:translateY(0); }
+    .hiv-accent { color: var(--amber); }
+    .hiv-bg { background-image: url('https://images.unsplash.com/photo-1585435557343-3b092031a831?w=1920&q=80'); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="logo-container" aria-label="Daav home">
+    <img src="../assets/Daav_logo.webp" alt="Daav NGO Logo" class="logo-img" loading="eager">
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="../index.html#about">About</a></li>
+    <li class="dropdown">
+      <a href="#">Programs</a>
+      <div class="dropdown-menu">
+        <a href="hiv-aids-support.html"><span class="dm-icon">🎗</span> HIV/AIDS Support</a>
+        <a href="malaria-care.html"><span class="dm-icon">🦟</span> Malaria Care</a>
+        <a href="tb-treatment.html"><span class="dm-icon">🫁</span> TB Treatment</a>
+        <a href="mobile-clinics.html"><span class="dm-icon">🚐</span> Mobile Clinics</a>
+        <a href="impact-data.html"><span class="dm-icon">📊</span> Impact Data</a>
+      </div>
+    </li>
+    <li><a href="../index.html#impact">Impact</a></li>
+    <li><a href="../index.html#involved">Get Involved</a></li>
+    <li><a href="../index.html#trust">Partners</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-icon" id="darkToggle" aria-label="Toggle dark mode">🌙</button>
+    <a href="#" class="btn-donate-nav" data-modal="donate">Donate Now</a>
+    <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" role="dialog">
+  <button class="mobile-nav-close">✕</button>
+  <a href="../index.html">Home</a>
+  <a href="hiv-aids-support.html">HIV/AIDS Support</a>
+  <a href="malaria-care.html">Malaria Care</a>
+  <a href="tb-treatment.html">TB Treatment</a>
+  <a href="mobile-clinics.html">Mobile Clinics</a>
+  <a href="impact-data.html">Impact Data</a>
+  <a href="#" data-modal="donate" style="color:var(--amber)">Donate →</a>
+</div>
+
+<!-- HERO -->
+<header class="prog-hero">
+  <div class="prog-hero-bg hiv-bg" aria-hidden="true"></div>
+  <div class="prog-hero-content">
+    <div class="prog-hero-breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="#">Programs</a>
+      <span class="sep">/</span>
+      <span class="current">HIV/AIDS Support</span>
+    </div>
+    <div class="prog-hero-tag"><span>🎗 Health Program</span></div>
+    <h1>HIV/AIDS Support<br>Program</h1>
+    <p class="tagline">Testing, treatment adherence, counselling, and community-led stigma reduction for people living with HIV in Dar es Salaam.</p>
+    <div class="prog-hero-stats">
+      <div class="prog-hero-stat"><span class="num"><span class="counter" data-target="3840" data-dur="2000"></span><em>+</em></span><span class="lbl">Patients on ARV Support</span></div>
+      <div class="prog-hero-stat"><span class="num"><span class="counter" data-target="8500" data-dur="2200"></span><em>+</em></span><span class="lbl">Tests Conducted</span></div>
+      <div class="prog-hero-stat"><span class="num"><span class="counter" data-target="91" data-dur="1800"></span><em>%</em></span><span class="lbl">ARV Adherence Rate</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section class="prog-section prog-section-light" aria-labelledby="prob-h">
+  <div class="container">
+    <div class="problem-intro">
+      <div class="problem-intro-text">
+        <div class="section-header reveal">
+          <span class="label">The Challenge</span>
+          <h2 id="prob-h">HIV/AIDS in Dar es Salaam</h2>
+          <p>Tanzania carries one of Africa's highest HIV burdens. In Dar es Salaam, urban density, poverty, and entrenched stigma create barriers that prevent testing, delay treatment, and push infected individuals out of care.</p>
+        </div>
+        <div class="stat-pills reveal reveal-delay-1">
+          <div class="stat-pill"><span class="stat-pill-num">8.2%</span><span class="stat-pill-text">HIV prevalence in Dar es Salaam — nearly double the national average</span></div>
+          <div class="stat-pill"><span class="stat-pill-num">1 in 3</span><span class="stat-pill-text">People living with HIV are unaware of their status in Tanzania</span></div>
+          <div class="stat-pill"><span class="stat-pill-num">42%</span><span class="stat-pill-text">Drop-out rate from ARV programmes in under-resourced facilities</span></div>
+        </div>
+      </div>
+      <div class="problem-image-wrap reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" alt="Community health worker conducting HIV counselling session" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="prog-section prog-section-sand" aria-labelledby="act-h">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="label">Our Interventions</span>
+      <h2 id="act-h">What We Do</h2>
+      <p>A comprehensive, person-centred response that addresses both clinical need and social determinants of HIV outcomes.</p>
+    </div>
+    <div class="activity-grid">
+      <article class="activity-card reveal reveal-delay-1">
+        <div class="activity-card-header">
+          <div class="activity-icon">🔬</div>
+          <h3>Testing &amp; Counselling (HTC)</h3>
+        </div>
+        <p>We run regular community testing events and operate four permanent HTC stations. All testing is voluntary, confidential, and paired with pre- and post-test counselling by trained professionals.</p>
+        <ul class="activity-list">
+          <li>Walk-in testing at 4 community health posts</li>
+          <li>Monthly community testing drives in 15 wards</li>
+          <li>Partner notification and couples counselling</li>
+          <li>Referral to government ART clinics within 48h</li>
+        </ul>
+      </article>
+      <article class="activity-card reveal reveal-delay-2">
+        <div class="activity-card-header">
+          <div class="activity-icon">💊</div>
+          <h3>ARV Adherence Support</h3>
+        </div>
+        <p>Starting antiretroviral therapy is only half the battle — staying on it for life is the challenge. Our patient navigators provide structured adherence support, home visits, and reminder systems.</p>
+        <ul class="activity-list">
+          <li>Dedicated patient navigator per 30 patients</li>
+          <li>Monthly adherence check-in calls and home visits</li>
+          <li>Pill organiser and digital reminder provision</li>
+          <li>Nutrition counselling to support ARV efficacy</li>
+        </ul>
+      </article>
+      <article class="activity-card reveal reveal-delay-3">
+        <div class="activity-card-header">
+          <div class="activity-icon">🗣</div>
+          <h3>Stigma Reduction &amp; Education</h3>
+        </div>
+        <p>Stigma remains the single largest barrier to HIV testing and treatment in Tanzania. We run structured community dialogues, school-based education, and faith leader engagement programmes.</p>
+        <ul class="activity-list">
+          <li>Bi-monthly community dialogue sessions</li>
+          <li>Secondary school HIV literacy curriculum</li>
+          <li>Engagement of 120+ religious and community leaders</li>
+          <li>Swahili radio programming and social media</li>
+        </ul>
+      </article>
+      <article class="activity-card reveal reveal-delay-4">
+        <div class="activity-card-header">
+          <div class="activity-icon">🏘</div>
+          <h3>Outreach to Key Populations</h3>
+        </div>
+        <p>Certain populations face higher risk and greater barriers. We conduct targeted, non-judgmental outreach to ensure no one is left behind in our response.</p>
+        <ul class="activity-list">
+          <li>Peer-led outreach by trained community health workers</li>
+          <li>Safe, confidential access to testing for all</li>
+          <li>Linkage to social protection and legal support services</li>
+          <li>Psychosocial support groups for PLHIV</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="prog-section prog-section-light" aria-labelledby="how-h">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="label">Our Process</span>
+      <h2 id="how-h">From Identification to Long-Term Care</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-step reveal reveal-delay-1">
+        <div class="how-step-num">1</div>
+        <h3>Community Mapping</h3>
+        <p>We identify high-prevalence wards through epidemiological data and deploy community health workers for door-to-door sensitisation and testing referral.</p>
+      </div>
+      <div class="how-step reveal reveal-delay-2">
+        <div class="how-step-num">2</div>
+        <h3>Test &amp; Link</h3>
+        <p>Rapid HIV testing is offered on-site. Positive cases are immediately counselled and linked to ART initiation within 48 hours via our government partnership.</p>
+      </div>
+      <div class="how-step reveal reveal-delay-3">
+        <div class="how-step-num">3</div>
+        <h3>Adherence &amp; Monitoring</h3>
+        <p>Patients are enrolled in a structured support programme. Monthly viral load proxies and a digital tracking system flag those at risk of dropping out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="prog-section prog-section-dark" aria-labelledby="imp-h">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="label" style="color:var(--teal-300)">Measured Results</span>
+      <h2 id="imp-h" style="color:var(--white)">HIV/AIDS Program Impact</h2>
+    </div>
+    <div class="impact-stat-row">
+      <div class="impact-stat-card reveal reveal-delay-1"><div class="ico">🔬</div><span class="big"><span class="counter" data-target="8500" data-dur="2200"></span><em>+</em></span><span class="lbl">HIV Tests Conducted</span><span class="sub">Since 2020</span></div>
+      <div class="impact-stat-card reveal reveal-delay-2"><div class="ico">💊</div><span class="big"><span class="counter" data-target="3840" data-dur="2000"></span><em>+</em></span><span class="lbl">Patients on ARV Support</span><span class="sub">Active as of Q1 2025</span></div>
+      <div class="impact-stat-card reveal reveal-delay-3"><div class="ico">📈</div><span class="big"><span class="counter" data-target="91" data-dur="1800"></span><em>%</em></span><span class="lbl">ARV Adherence Rate</span><span class="sub">vs. 58% national average</span></div>
+      <div class="impact-stat-card reveal reveal-delay-4"><div class="ico">👥</div><span class="big"><span class="counter" data-target="12000" data-dur="2500"></span><em>+</em></span><span class="lbl">People Reached by Education</span><span class="sub">Stigma reduction programme</span></div>
+    </div>
+    <div class="seq-reveal reveal" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:2rem 2.5rem;">
+      <p class="seq-line" style="font-family:var(--font-display);font-size:1.5rem;color:var(--white);max-width:none;margin-bottom:.6rem">"In communities where we've operated for over 2 years, new HIV diagnoses have fallen by 34%."</p>
+      <p class="seq-line" style="font-size:.85rem;color:rgba(255,255,255,.5);font-family:var(--font-mono);letter-spacing:.06em;max-width:none">— Daav Internal Impact Assessment, 2024 · Kinondoni District</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="prog-cta">
+  <div class="container">
+    <div class="prog-cta-inner">
+      <div class="prog-cta-text">
+        <h2>Help Us Reach More People Living with HIV</h2>
+        <p>$25 funds one month of ARV adherence support. $100 covers full testing and counselling for a family of four.</p>
+      </div>
+      <div class="prog-cta-buttons">
+        <a href="#" class="btn-white-cta" data-modal="donate">Donate to This Program</a>
+        <a href="../index.html#involved" class="btn-ghost-cta">Volunteer with Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo-container" aria-label="Daav home">
+    <img src="../assets/Daav_logo.webp" alt="Daav NGO Logo" class="logo-img" loading="eager">
+  </a>
+        <p>Fighting infections in Dar es Salaam through evidence-based care, community outreach, and radical transparency.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Programs</h5>
+        <ul>
+          <li><a href="hiv-aids-support.html">HIV/AIDS Support</a></li>
+          <li><a href="malaria-care.html">Malaria Care</a></li>
+          <li><a href="tb-treatment.html">TB Treatment</a></li>
+          <li><a href="mobile-clinics.html">Mobile Clinics</a></li>
+          <li><a href="impact-data.html">Impact Data</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Organisation</h5>
+        <ul>
+          <li><a href="../index.html#about">About Daav</a></li>
+          <li><a href="../index.html#impact">Our Impact</a></li>
+          <li><a href="../index.html#involved">Get Involved</a></li>
+          <li><a href="../index.html#trust">Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <address style="font-style:normal">
+          <p class="footer-contact-item"><span>📍</span><span>Plot 32, Makunganya St., Ilala, Dar es Salaam</span></p>
+          <p class="footer-contact-item"><span>✉</span><a href="mailto:info@daav.or.tz" style="color:rgba(255,255,255,.65)">info@daav.or.tz</a></p>
+          <p class="footer-contact-item"><span>📞</span><a href="tel:+255220001234" style="color:rgba(255,255,255,.65)">+255 22 000 1234</a></p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Daav. Registered NGO in Tanzania (Reg. No. 00029175).</p>
+      <nav class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Annual Report</a><a href="#">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div id="donateModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close">✕</button>
+    <h3 id="modal-title">Support HIV/AIDS Care</h3>
+    <p>Your donation funds ARV adherence support, testing, and counselling in Dar es Salaam.</p>
+    <div class="donation-amounts">
+      <button class="amount-btn active">$25 <small>1 Month ARV Support</small></button>
+      <button class="amount-btn">$50 <small>Family Testing</small></button>
+      <button class="amount-btn">$100 <small>Navigator Month</small></button>
+      <button class="amount-btn">$250 <small>Full Quarter</small></button>
+    </div>
+    <input type="number" id="customAmount" class="modal-input" placeholder="$ Custom amount" min="1"/>
+    <button class="modal-submit">Donate Securely →</button>
+    <p class="modal-secure">🔒 Secure · 100% to programs · Tax deductible</p>
+  </div>
+</div>
+
+<script src="../js/programs.js"></script>
+</body>
+</html>

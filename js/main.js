@@ -34,6 +34,13 @@ const Nav = (() => {
     mob?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
       if (open) toggleMobile();
     }));
+
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('active');
+      });
+    });
   };
 
   return { init };

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Daav TB Treatment Program — screening, medication adherence, community detection and MDR-TB support in Dar es Salaam, Tanzania."/>
+  <title>Daav NGO | TB Treatment</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/Daav_logo.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/Daav_logo.webp">
+  <link rel="shortcut icon" href="../assets/Daav_logo.webp">
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <link rel="stylesheet" href="../css/programs.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    .seq-line { opacity:0; transform:translateY(18px); transition:opacity .55s var(--ease-out-expo),transform .55s var(--ease-out-expo); }
+    .seq-line.visible { opacity:1; transform:translateY(0); }
+    .tb-bg { background-image: url('https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=1920&q=80'); }
+    .tb-warning { background: rgba(232,98,10,.1); border: 1px solid rgba(232,98,10,.25); border-radius: var(--radius-md); padding: 1.2rem 1.4rem; margin-top: 1.5rem; display: flex; gap: .75rem; align-items: flex-start; }
+    .tb-warning h4 { font-family: var(--font-body); font-size: .88rem; font-weight: 700; color: var(--amber-dk); margin-bottom: .2rem; }
+    .tb-warning p  { font-size: .82rem; color: var(--ink-70); max-width: none; }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="logo-container" aria-label="Daav home">
+    <img src="../assets/Daav_logo.webp" alt="Daav NGO Logo" class="logo-img" loading="eager">
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="../index.html#about">About</a></li>
+    <li class="dropdown">
+      <a href="#">Programs</a>
+      <div class="dropdown-menu">
+        <a href="hiv-aids-support.html"><span class="dm-icon">🎗</span> HIV/AIDS Support</a>
+        <a href="malaria-care.html"><span class="dm-icon">🦟</span> Malaria Care</a>
+        <a href="tb-treatment.html"><span class="dm-icon">🫁</span> TB Treatment</a>
+        <a href="mobile-clinics.html"><span class="dm-icon">🚐</span> Mobile Clinics</a>
+        <a href="impact-data.html"><span class="dm-icon">📊</span> Impact Data</a>
+      </div>
+    </li>
+    <li><a href="impact-data.html">Impact</a></li>
+    <li><a href="../index.html#involved">Get Involved</a></li>
+    <li><a href="../index.html#trust">Partners</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-icon" id="darkToggle" aria-label="Toggle dark mode">🌙</button>
+    <a href="#" class="btn-donate-nav" data-modal="donate">Donate Now</a>
+    <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" role="dialog">
+  <button class="mobile-nav-close">✕</button>
+  <a href="../index.html">Home</a>
+  <a href="hiv-aids-support.html">HIV/AIDS Support</a>
+  <a href="malaria-care.html">Malaria Care</a>
+  <a href="tb-treatment.html">TB Treatment</a>
+  <a href="mobile-clinics.html">Mobile Clinics</a>
+  <a href="impact-data.html">Impact Data</a>
+  <a href="#" data-modal="donate" style="color:var(--amber)">Donate →</a>
+</div>
+
+<!-- HERO -->
+<header class="prog-hero">
+  <div class="prog-hero-bg tb-bg" aria-hidden="true"></div>
+  <div class="prog-hero-content">
+    <div class="prog-hero-breadcrumb">
+      <a href="../index.html">Home</a><span class="sep">/</span>
+      <a href="#">Programs</a><span class="sep">/</span>
+      <span class="current">TB Treatment</span>
+    </div>
+    <div class="prog-hero-tag"><span>🫁 Health Program</span></div>
+    <h1>Tuberculosis<br>Treatment Program</h1>
+    <p class="tagline">Active case finding, medication adherence support, community-based detection, and MDR-TB monitoring to eliminate tuberculosis as a public health threat in Dar es Salaam.</p>
+    <div class="prog-hero-stats">
+      <div class="prog-hero-stat"><span class="num"><span class="counter" data-target="2380" data-dur="2000"></span><em>+</em></span><span class="lbl">TB Patients Supported</span></div>
+      <div class="prog-hero-stat"><span class="num"><span class="counter" data-target="89" data-dur="1800"></span><em>%</em></span><span class="lbl">Treatment Success Rate</span></div>
+      <div class="prog-hero-stat"><span class="num"><span class="counter" data-target="62" data-dur="1600"></span><em>%</em></span><span class="lbl">Drop-out Reduction</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section class="prog-section prog-section-light" aria-labelledby="prob-h">
+  <div class="container">
+    <div class="problem-intro">
+      <div class="problem-intro-text">
+        <div class="section-header reveal">
+          <span class="label">The Challenge</span>
+          <h2 id="prob-h">Tanzania's Most Lethal Infection</h2>
+          <p>Tuberculosis kills more people in Tanzania than any other single infectious disease — more than malaria, more than HIV when measured per diagnosis. It disproportionately affects the urban poor, where overcrowded housing, malnutrition, and HIV co-infection accelerate transmission and mortality.</p>
+        </div>
+        <div class="stat-pills reveal reveal-delay-1">
+          <div class="stat-pill"><span class="stat-pill-num">#3</span><span class="stat-pill-text">Dar es Salaam among top 3 highest TB burden cities in Sub-Saharan Africa</span></div>
+          <div class="stat-pill"><span class="stat-pill-num">6%</span><span class="stat-pill-text">Annual rise in MDR-TB (multidrug-resistant) cases in Tanzania</span></div>
+          <div class="stat-pill"><span class="stat-pill-num">6 months</span><span class="stat-pill-text">Minimum treatment duration — adherence is the central challenge</span></div>
+        </div>
+        <div class="tb-warning reveal reveal-delay-2">
+          <span style="font-size:1.2rem">⚠️</span>
+          <div>
+            <h4>The MDR-TB Crisis</h4>
+            <p>Incomplete treatment courses breed drug-resistant strains. MDR-TB requires 18–24 months of toxic second-line drugs costing 100× more per patient. Prevention through adherence support is critical.</p>
+          </div>
+        </div>
+      </div>
+      <div class="problem-image-wrap reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1631217873436-b0fa41e65a5e?w=800&q=80" alt="Health worker screening community members for tuberculosis symptoms" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="prog-section prog-section-sand" aria-labelledby="act-h">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="label">Our Interventions</span>
+      <h2 id="act-h">Comprehensive TB Response</h2>
+      <p>From active case finding through full treatment completion — a closed-loop system designed to leave no TB patient behind.</p>
+    </div>
+    <div class="activity-grid">
+      <article class="activity-card reveal reveal-delay-1">
+        <div class="activity-card-header"><div class="activity-icon">🔍</div><h3>Active TB Screening</h3></div>
+        <p>We do not wait for patients to present with symptoms. Community health workers proactively screen household contacts, HIV-positive individuals, and others at high risk through door-to-door campaigns.</p>
+        <ul class="activity-list">
+          <li>Symptom screening of 500+ households monthly</li>
+          <li>Sputum collection and Gene Xpert testing referral</li>
+          <li>Chest X-ray coordination with district hospitals</li>
+          <li>Contact tracing for every newly confirmed case</li>
+        </ul>
+      </article>
+      <article class="activity-card reveal reveal-delay-2">
+        <div class="activity-card-header"><div class="activity-icon">💊</div><h3>Medication Adherence (DOT)</h3></div>
+        <p>Direct Observed Therapy (DOT) is the gold standard for TB treatment. Our community-based DOT workers support patients through the full 6–8 month treatment course, reducing default rates dramatically.</p>
+        <ul class="activity-list">
+          <li>Daily medication observation by trained community worker</li>
+          <li>Home-based DOT for mobility-restricted patients</li>
+          <li>Nutritional support packages to improve adherence</li>
+          <li>Digital adherence tracking with early warning alerts</li>
+        </ul>
+      </article>
+      <article class="activity-card reveal reveal-delay-3">
+        <div class="activity-card-header"><div class="activity-icon">📡</div><h3>Follow-Up Monitoring</h3></div>
+        <p>Regular clinical reviews track treatment response and detect side effects early. Monthly sputum smear tests and chest assessments ensure patients are progressing toward cure.</p>
+        <ul class="activity-list">
+          <li>Monthly sputum smear monitoring for all patients</li>
+          <li>Side effect counselling and medical escalation pathway</li>
+          <li>MDR-TB suspected cases fast-tracked to national referral</li>
+          <li>End-of-treatment outcomes recorded and reported to MoH</li>
+        </ul>
+      </article>
+      <article class="activity-card reveal reveal-delay-4">
+        <div class="activity-card-header"><div class="activity-icon">🏘</div><h3>Community Detection Programme</h3></div>
+        <p>Most TB transmission happens before diagnosis. Our community detection programme trains local volunteers to identify symptomatic individuals and facilitate rapid access to testing.</p>
+        <ul class="activity-list">
+          <li>200+ trained community TB alert volunteers</li>
+          <li>Symptoms awareness campaigns in mosques, churches and markets</li>
+          <li>Anonymous hotline for TB symptom reporting</li>
+          <li>Co-ordination with school health and workplace programmes</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="prog-section prog-section-light" aria-labelledby="how-h">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="label">Our Process</span>
+      <h2 id="how-h">From Cough to Cure</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-step reveal reveal-delay-1">
+        <div class="how-step-num">1</div>
+        <h3>Detect Early</h3>
+        <p>Community volunteers and health workers screen households in high-burden wards, identifying symptomatic individuals and fast-tracking them for Gene Xpert diagnosis within 72 hours.</p>
+      </div>
+      <div class="how-step reveal reveal-delay-2">
+        <div class="how-step-num">2</div>
+        <h3>Treat &amp; Support</h3>
+        <p>Confirmed TB patients are enrolled in our community-based DOT programme. A dedicated support worker visits daily, monitors adherence, and provides nutritional and psychosocial support.</p>
+      </div>
+      <div class="how-step reveal reveal-delay-3">
+        <div class="how-step-num">3</div>
+        <h3>Confirm Cure</h3>
+        <p>At months 2, 5, and 6 of treatment, sputum tests confirm negative conversion. Cured patients are tracked for 12 months post-treatment to detect relapse early.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="prog-section prog-section-dark" aria-labelledby="imp-h">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="label" style="color:var(--teal-300)">Measured Results</span>
+      <h2 id="imp-h" style="color:var(--white)">TB Program Impact</h2>
+    </div>
+    <div class="impact-stat-row">
+      <div class="impact-stat-card reveal reveal-delay-1"><div class="ico">🫁</div><span class="big"><span class="counter" data-target="2380" data-dur="2000"></span><em>+</em></span><span class="lbl">Patients Supported</span><span class="sub">On full treatment course</span></div>
+      <div class="impact-stat-card reveal reveal-delay-2"><div class="ico">✅</div><span class="big"><span class="counter" data-target="89" data-dur="1800"></span><em>%</em></span><span class="lbl">Treatment Success Rate</span><span class="sub">vs. 73% national average</span></div>
+      <div class="impact-stat-card reveal reveal-delay-3"><div class="ico">📉</div><span class="big"><span class="counter" data-target="62" data-dur="1700"></span><em>%</em></span><span class="lbl">Drop-Out Reduction</span><span class="sub">In Daav-supported cohorts</span></div>
+      <div class="impact-stat-card reveal reveal-delay-4"><div class="ico">🔍</div><span class="big"><span class="counter" data-target="1240" data-dur="2000"></span><em>+</em></span><span class="lbl">Active Cases Found</span><span class="sub">Via proactive screening</span></div>
+    </div>
+    <div class="seq-reveal reveal" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:2rem 2.5rem;">
+      <p class="seq-line" style="font-family:var(--font-display);font-size:1.5rem;color:var(--white);max-width:none;margin-bottom:.6rem">"Our community-based DOT model achieved an 89% treatment success rate — 16 points above the national average."</p>
+      <p class="seq-line" style="font-size:.85rem;color:rgba(255,255,255,.5);font-family:var(--font-mono);letter-spacing:.06em;max-width:none">— Daav TB Programme Outcome Review, 2024</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="prog-cta">
+  <div class="container">
+    <div class="prog-cta-inner">
+      <div class="prog-cta-text">
+        <h2>Help Complete the Cure</h2>
+        <p>$40 funds one month of community DOT support. Incomplete treatment creates drug resistance — your donation helps patients finish.</p>
+      </div>
+      <div class="prog-cta-buttons">
+        <a href="#" class="btn-white-cta" data-modal="donate">Donate to TB Treatment</a>
+        <a href="../index.html#involved" class="btn-ghost-cta">Volunteer</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo-container" aria-label="Daav home">
+    <img src="../assets/Daav_logo.webp" alt="Daav NGO Logo" class="logo-img" loading="eager">
+  </a>
+        <p>Fighting infections in Dar es Salaam through evidence-based care, community outreach, and radical transparency.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Programs</h5><ul>
+        <li><a href="hiv-aids-support.html">HIV/AIDS Support</a></li>
+        <li><a href="malaria-care.html">Malaria Care</a></li>
+        <li><a href="tb-treatment.html">TB Treatment</a></li>
+        <li><a href="mobile-clinics.html">Mobile Clinics</a></li>
+        <li><a href="impact-data.html">Impact Data</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Organisation</h5><ul>
+        <li><a href="../index.html#about">About Daav</a></li>
+        <li><a href="../index.html#impact">Our Impact</a></li>
+        <li><a href="../index.html#involved">Get Involved</a></li>
+        <li><a href="../index.html#trust">Partners</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Contact</h5>
+        <address style="font-style:normal">
+          <p class="footer-contact-item"><span>📍</span><span>Plot 32, Makunganya St., Ilala, Dar es Salaam</span></p>
+          <p class="footer-contact-item"><span>✉</span><a href="mailto:info@daav.or.tz" style="color:rgba(255,255,255,.65)">info@daav.or.tz</a></p>
+          <p class="footer-contact-item"><span>📞</span><a href="tel:+255220001234" style="color:rgba(255,255,255,.65)">+255 22 000 1234</a></p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Daav. Registered NGO in Tanzania (Reg. No. 00029175).</p>
+      <nav class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Annual Report</a><a href="#">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<div id="donateModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close">✕</button>
+    <h3 id="modal-title">Support TB Treatment</h3>
+    <p>Your donation funds community DOT support, screenings, and treatment adherence programmes.</p>
+    <div class="donation-amounts">
+      <button class="amount-btn active">$40 <small>1 Month DOT</small></button>
+      <button class="amount-btn">$80 <small>Full Screening</small></button>
+      <button class="amount-btn">$150 <small>Quarter Support</small></button>
+      <button class="amount-btn">$300 <small>Half Treatment</small></button>
+    </div>
+    <input type="number" id="customAmount" class="modal-input" placeholder="$ Custom amount" min="1"/>
+    <button class="modal-submit">Donate Securely →</button>
+    <p class="modal-secure">🔒 Secure · 100% to programs · Tax deductible</p>
+  </div>
+</div>
+
+<script src="../js/programs.js"></script>
+</body>
+</html>
