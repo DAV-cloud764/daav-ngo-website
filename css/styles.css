@@ -1612,16 +1612,44 @@ p  { font-size: clamp(.95rem, 1.5vw, 1.05rem); color: var(--ink-70); max-width: 
   background: #f5f7fa;
 }
 
-.nav-item.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+@media (min-width: 769px) {
+  .nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
 
-.nav-item.dropdown.active .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    visibility: hidden;
+    display: none;
+    background: transparent;
+  }
+
+  .dropdown-menu a {
+    color: var(--white);
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .dropdown-menu a:hover {
+    background: rgba(255,255,255,.05);
+  }
+
+  .nav-item.dropdown.active .dropdown-menu {
+    display: block;
+    visibility: visible;
+  }
+}
+
+.arrow {
+  font-size: 10px;
+  margin-left: 5px;
 }
 
 .dm-icon {

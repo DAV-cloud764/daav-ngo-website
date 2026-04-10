@@ -24,6 +24,10 @@ const Nav = (() => {
     open = !open;
     mob.classList.toggle('active', open);
     document.body.style.overflow = open ? 'hidden' : '';
+
+    if (!open) {
+       document.querySelectorAll('.nav-item.dropdown').forEach(item => item.classList.remove('active'));
+    }
   };
 
   const init = () => {
@@ -31,14 +35,23 @@ const Nav = (() => {
     onScroll();
     ham?.addEventListener('click', toggleMobile);
     cls?.addEventListener('click', toggleMobile);
-    mob?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      if (open) toggleMobile();
-    }));
-
-    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    mob?.querySelectorAll('a:not(.dropdown-toggle)').forEach(a => a.addEventListener('click', () => { 
       toggle.addEventListener('click', function (e) {
-        e.preventDefault();
-        this.parentElement.classList.toggle('active');
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+
+          const parent = this.parentElement;
+
+          // Close other dropdowns
+          document.querySelectorAll('.nav-item.dropdown').forEach(item => {
+            if (item !== parent) {
+              item.classList.remove('active');
+            }
+          });
+
+          // Toggle current
+          parent.classList.toggle('active');
+        }
       });
     });
   };
