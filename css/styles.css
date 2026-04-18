@@ -1159,29 +1159,58 @@ p  { font-size: clamp(.95rem, 1.5vw, 1.05rem); color: var(--ink-70); max-width: 
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .partner-logo {
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: var(--radius-md);
-  padding: 1.2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 72px;
-  font-family: var(--font-mono);
-  font-size: .75rem;
-  color: rgba(255,255,255,.45);
-  text-align: center;
-  transition: all .25s;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.partner-logo img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  flex-shrink: 0;
+}
+
+.partner-logo span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
 }
 
 .partner-logo:hover {
-  background: rgba(255,255,255,.12);
-  color: rgba(255,255,255,.8);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.partner-logo:hover img {
+  filter: grayscale(0%);
+}
+
+/* Dark mode — Partner Cards */
+[data-theme="dark"] .partner-logo {
+  background: #1e3545;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .partner-logo span {
+  color: #e8f4f7;
+}
+
+[data-theme="dark"] .partner-logo:hover {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
 }
 
 /* ============================================
@@ -1522,6 +1551,7 @@ p  { font-size: clamp(.95rem, 1.5vw, 1.05rem); color: var(--ink-70); max-width: 
   .process-steps { grid-template-columns: 1fr; }
   .impact-grid { grid-template-columns: 1fr; }
   .hero-stat-bar { flex-direction: column; gap: 1rem; }
+  .partners-grid { grid-template-columns: 1fr; }
 }
 
 /* Reduce parallax on mobile */
