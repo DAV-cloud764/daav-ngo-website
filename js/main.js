@@ -286,10 +286,14 @@ const DonationModal = (() => {
 const DarkMode = (() => {
   const toggle = document.getElementById('darkToggle');
   const html   = document.documentElement;
+  const icons = {
+    sun: '<svg class="ui-icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+    moon: '<svg class="ui-icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>'
+  };
 
   const apply = (dark) => {
     html.setAttribute('data-theme', dark ? 'dark' : 'light');
-    if (toggle) toggle.textContent = dark ? '☀️' : '🌙';
+    if (toggle) toggle.innerHTML = dark ? icons.sun : icons.moon;
     localStorage.setItem('daav-theme', dark ? 'dark' : 'light');
   };
 

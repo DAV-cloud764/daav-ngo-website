@@ -27,9 +27,9 @@
   inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(4,30,36,.25) 0%,
-    rgba(4,30,36,.65) 55%,
-    rgba(4,30,36,.92) 100%
+    rgba(38,38,38,.25) 0%,
+    rgba(38,38,38,.65) 55%,
+    rgba(38,38,38,.92) 100%
   );
 }
 
@@ -257,10 +257,15 @@
 }
 
 .activity-list li::before {
-  content: '→';
+  content: '';
+  width: .45rem;
+  height: .45rem;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg);
   color: var(--teal-500);
   flex-shrink: 0;
-  margin-top: .05rem;
+  margin-top: .38rem;
 }
 
 /* ---- How It Works ---- */
@@ -305,7 +310,7 @@
 
 .how-step:hover .how-step-num {
   background: var(--amber);
-  box-shadow: 0 0 0 2px var(--amber-dk), 0 6px 20px rgba(232,98,10,.3);
+  box-shadow: 0 0 0 2px var(--amber-dk), 0 6px 20px rgba(130,180,64,.3);
 }
 
 .how-step h3 { font-size: 1.05rem; margin-bottom: .5rem; }
@@ -639,7 +644,7 @@
   opacity: 0;
   pointer-events: none;
   transition: all .25s var(--ease-out-expo);
-  box-shadow: 0 16px 48px rgba(4,30,36,.4);
+  box-shadow: 0 16px 48px rgba(38,38,38,.4);
   z-index: 100;
 }
 
@@ -668,7 +673,17 @@
 
 .dropdown-menu a .dm-icon { font-size: 1rem; }
 
-.dropdown > a::after { content: ' ▾'; font-size: .7em; opacity: .6; }
+.dropdown > a::after {
+  content: '';
+  display: inline-block;
+  width: .45em;
+  height: .45em;
+  margin: 0 0 .15em .35em;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  opacity: .6;
+}
 
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {

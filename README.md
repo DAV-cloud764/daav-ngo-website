@@ -1,119 +1,77 @@
-# 🌍 Daav NGO Website
+# 🌍 DAAV NGO Website
 
-A responsive, modern NGO website built to support healthcare initiatives in **Dar es Salaam, Tanzania**, focusing on infectious disease awareness, treatment support, and community outreach.
+A responsive, multi-page NGO website for **DAAV**, focused on healthcare programs, community outreach, impact reporting, and a foundation for secure online donations.
 
----
+The project is based in **Dar es Salaam, Tanzania** and is being developed as both a real-world engineering project and a learning exercise in modern web development, backend systems, security, and automation.
 
-## 📌 Overview
+## 📌 Project Overview
 
-Daav is a non-governmental organization dedicated to improving lives through:
+The DAAV website presents the organization's healthcare programs and impact information through a responsive frontend.
 
-* HIV/AIDS support programs
-* Malaria prevention and treatment
-* Tuberculosis (TB) care
-* Mobile health clinics
-* Data-driven impact reporting
+The project is evolving from a static website into a full-stack application with a dedicated Spring Boot backend for donation and payment functionality.
 
-This project implements a **multi-page responsive website** with modern UI/UX practices.
+### Current program areas
 
----
+- HIV/AIDS Support
+- Malaria Care
+- TB Treatment
+- Mobile Clinics
+- Impact Data
 
-## 🚀 Features
+## ✨ Current Features
 
-* Fully responsive design (mobile-first)
-* Interactive navigation with dropdown (desktop + mobile)
-* Program-specific pages:
+### Frontend
 
-  * HIV/AIDS Support
-  * Malaria Care
-  * TB Treatment
-  * Mobile Clinics
-  * Impact Data
-* Smooth animations:
+- Responsive multi-page website
+- Desktop and mobile navigation
+- Program-specific pages
+- Interactive donation modal
+- Dark/light theme support
+- Language toggle
+- Smooth scrolling and UI animations
+- Typewriter and parallax effects
+- Responsive layouts for different screen sizes
+- Consistent DAAV branding and visual system
 
-  * Typewriter effect
-  * Parallax scrolling
-* Consistent branding (Daav logo across all pages)
-* Clean UI inspired by international NGO standards
+### Backend
 
----
+The backend is implemented using **Java and Spring Boot**.
 
-## 🛠️ Tech Stack
+Current backend foundations include:
 
-* HTML5
-* CSS3 (Flexbox + Media Queries)
-* JavaScript (Vanilla JS)
-* Google Fonts (Inter)
+- Donation domain model
+- Payment domain model
+- Donation status lifecycle
+- Payment status lifecycle
+- Persistence with Spring Data JPA
+- Relational database support
+- Currency attribute conversion
+- Exchange-rate abstraction
+- Configurable TZS → USD development conversion
+- Application clock configuration for testable time-dependent logic
+- Health/info management endpoints
+- Automated unit and persistence tests
 
----
+> The payment provider integration is being developed incrementally. Production payment credentials and secrets are not stored in the repository.
 
-## 📁 Project Structure
+## 🏗️ Architecture
 
-```
-daav-ngo-website/
+The project currently consists of two major application layers:
+
+```text
+DAAV NGO Website
 │
-├── index.html
-├── programs/
-│   ├── HIV support.html
-│   ├── malaria care.html
-│   ├── Tb treatment.html
-│   ├── mobile clinic.html
-│   └── impact data.html
+├── Frontend
+│   ├── HTML
+│   ├── CSS
+│   ├── Vanilla JavaScript
+│   └── Static assets
 │
-├── assets/
-│   ├── Daav_logo.webp
-│   ├── images/
-│
-├── css/
-├── js/
-└── README.md
-```
-
----
-
-## ⚙️ Setup Instructions
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/daav-ngo-website.git
-```
-
-2. Open project folder:
-
-```bash
-cd daav-ngo-website
-```
-
-3. Run locally:
-
-* Open `index.html` in browser
-  OR
-* Use Live Server (recommended)
-
----
-
-
----
-
-## 📊 Future Improvements
-
-* Backend integration (donations system)
-* CMS for managing programs
-* Accessibility improvements (ARIA roles)
-* Performance optimization (lazy loading)
-* Deployment (Netlify / Vercel)
-
----
-
-## 👨‍💻 Author
-
-**David (Daav Project Developer)**
-
-* Passionate about AI, automation, and real-world engineering solutions
-
----
-
-## 📄 License
-
-This project is for educational and portfolio purposes.
+└── Backend
+    ├── Spring Boot
+    ├── Spring Data JPA
+    ├── Domain models
+    ├── Repositories
+    ├── Currency / FX handling
+    ├── Payment foundation
+    └── Automated tests
